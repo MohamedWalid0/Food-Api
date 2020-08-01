@@ -1,0 +1,21 @@
+
+<div class="container my-5">
+    <input [(ngModel)]="searchTerm" class="form-control m-auto w-50" type="text" placeholder="Search">
+</div>
+
+<h3>{{searchTerm}}</h3>
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let item of myData|search:searchTerm" class="col-md-3 " >
+            <div class="card mb-3 ">
+                <img [src]="item['image_url']" class="w-100" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.title|textLess}}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a [routerLink]="['/recipe' , item.recipe_id ]" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+    <div *ngIf="loaded==true" class="row">
+        <div class="col-md-8">
+            <img [src]="myData['image_url']" class="w-100 imgRecipe" alt="">
+        </div>
+        <div class="col-md-4">
+            <ul class="mt-5 pt-5">
+                <li *ngFor="let i of myIngredients" >{{i}}</li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>
